@@ -2,10 +2,13 @@
     font-family: 'mainFont';
     src: url(SourceSans3-VariableFont_wght.ttf) format("truetype");
     font-weight: normal;
-    font-weight: bold;
-    font-weight: bolder;
 }
 
+@font-face {
+    font-family: 'mainFont';
+    src: url(SourceSans3-VariableFont_wght.ttf) format("truetype");
+    font-weight: bold;
+}
 
 
 * {
