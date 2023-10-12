@@ -1,18 +1,8 @@
-@font-face {
-    font-family: 'mainFont';
-    src: url(SourceSans3-VariableFont_wght.ttf) format("truetype");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'mainFont';
-    src: url(SourceSans3-VariableFont_wght.ttf) format("truetype");
-    font-weight: bold;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+3);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:bold);
 
 * {
-    font-family: 'mainFont';
+    font-family: 'Source Sans 3', sans-serif;
     font-weight: bold;
 }
 
