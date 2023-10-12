@@ -1,5 +1,10 @@
+@font-face {
+    font-family: mainFont;
+    src: url('/SourceSans3-VariableFont_wght.ttf');
+}
+
 * {
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: mainFont;
 }
 
 #contextmenu {
