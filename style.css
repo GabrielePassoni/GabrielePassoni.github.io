@@ -1,10 +1,11 @@
 @font-face {
-    font-family: mainFont;
-    src: url(/SourceSans3-VariableFont_wght.ttf);
+    font-family: 'mainFont';
+    src: url(SourceSans3-VariableFont_wght.ttf);
 }
 
 * {
-    font-family: mainFont;
+    font-family: 'mainFont';
+    font-weight: bold;
 }
 
 #contextmenu {
