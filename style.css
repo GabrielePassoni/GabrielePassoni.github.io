@@ -1,18 +1,73 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+3);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:bold);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:900);
+@import url(https://fonts.googleapis.com/css?family=Exo+2);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:700);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:900);
+
+:root {
+    --mainfont: 'Exo 2';
+    --secondgreen: #028d32;
+    --maingreen: #04ba44;
+    --buttonsize: 2vmax;
+    --textsize: 1.5vmax;
+    --titlesize: 4vmax;
+}
 
 * {
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: bold;
+    font-family: var(--mainfont);
+    padding: 0;
+    margin: 0;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+}
+
+#title {
+    font-family: var(--mainfont);
+    font-weight: 900;
+    font-size: var(--titlesize);
+    color: white;
+    background-color: var(--maingreen);
+    padding-left: 1vmax;
+}
+
 
 #contextmenu {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-around;
+    gap: 2vmax;
+    padding-left: 1vmax;
 }
 
 .contextbutton {
-    background-color: blue;
+    border-radius: 0.8vmax;
+    border-color: var(--maingreen);
+    background-color: white;
+    padding: 0.2vmax 0.4vmax;
+    color: black;
+    font-size: var(--buttonsize);
+    cursor: pointer;
+}
+
+.contextbutton:hover {
+    background-color: var(--maingreen);
+    color: white;
+}
+
+#contentpanel {
+    font-size: var(--textsize);
+    padding: 1vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+}
+
+#contentpanel #downloadcvpanel {
+    display: flex;
+    flex-direction: row;
 }
