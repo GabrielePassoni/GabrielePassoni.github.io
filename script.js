@@ -24,6 +24,6 @@ window.onload = function () {
     </div>`
     })
 
-    // document.getElementById("homebutton").click();
+    document.getElementById("homebutton").click();
 }
 
