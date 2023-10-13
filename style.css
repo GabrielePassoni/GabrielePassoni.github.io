@@ -44,7 +44,7 @@ body {
     padding-left: 1vmax;
 }
 
-.contextbutton {
+.button {
     border-radius: 0.8vmax;
     border-color: var(--maingreen);
     background-color: white;
@@ -54,7 +54,7 @@ body {
     cursor: pointer;
 }
 
-.contextbutton:hover {
+.button:hover {
     background-color: var(--maingreen);
     color: white;
 }
@@ -71,4 +71,9 @@ body {
     display: flex;
     flex-direction: row;
     gap: 20px;
+}
+
+#downloadcvpanel>.button {
+    text-decoration: none;
+    font-size: var(--textsize);
 }

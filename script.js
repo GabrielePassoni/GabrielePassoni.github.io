@@ -2,11 +2,11 @@ window.onload = function () {
     var contentBox = document.getElementById("contentpanel");
 
     document.getElementById("homebutton").addEventListener("click", function (e) {
-        contentBox.innerText = "home";
+        contentBox.innerHTML = ``
     })
 
     document.getElementById("projectsbutton").addEventListener("click", function (e) {
-        contentBox.innerText = "project";
+        contentBox.innerHTML = ``
     })
 
     document.getElementById("aboutmebutton").addEventListener("click", function (e) {
@@ -24,7 +24,6 @@ window.onload = function () {
     </div>`
     })
 
-    document.getElementById("aboutmebutton").click();
-
+    // document.getElementById("homebutton").click();
 }
 
