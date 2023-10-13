@@ -14,7 +14,7 @@ window.onload = function () {
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur minus rerum unde nisi, inventore enim
         qui perspiciatis sit vel tempora aliquid totam ipsa necessitatibus assumenda at earum asperiores harum ea!
     </div>
-    <div class="downloadcvpanel">
+    <div id="downloadcvpanel">
         <a href="./CVeng.pdf">
             Download here my CV (ENG)
         </a>
