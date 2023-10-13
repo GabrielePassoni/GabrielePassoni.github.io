@@ -33,6 +33,7 @@ body {
     color: white;
     background-color: var(--maingreen);
     padding-left: 1vmax;
+    user-select: none;
 }
 
 
@@ -52,6 +53,7 @@ body {
     color: black;
     font-size: var(--buttonsize);
     cursor: pointer;
+    user-select: none;
 }
 
 .button:hover {

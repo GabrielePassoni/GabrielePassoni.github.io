@@ -15,10 +15,10 @@ window.onload = function () {
         qui perspiciatis sit vel tempora aliquid totam ipsa necessitatibus assumenda at earum asperiores harum ea!
     </div>
     <div id="downloadcvpanel">
-        <a href="./CVeng.pdf">
+        <a href="./CVeng.pdf" class="button">
             Download here my CV (ENG)
         </a>
-        <a href="./CVita.pdf">
+        <a href="./CVita.pdf" class="button">
             Download here my CV (ITA)
         </a>
     </div>`
