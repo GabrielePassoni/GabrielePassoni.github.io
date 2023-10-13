@@ -4,7 +4,7 @@ window.onload = function () {
     document.getElementById("homebutton").addEventListener("click", function (e) {
         //this.classList.add("pressedbutton");
         contentBox.innerHTML = `<div class="presentationcontainer">
-        <img id="mainimg" src="./src/Personal.JPG">
+        <img id="mainimg" src="./src/Personal.JPG" loading="eager">
         <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo dicta delectus distinctio sed numquam, aut laborum odit, tempore quasi cupiditate, repellendus ex quod facere ipsam minima repellat cumque temporibus?</div>
     </div>`
     })

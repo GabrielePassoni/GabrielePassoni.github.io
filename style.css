@@ -87,6 +87,11 @@ body {
     color: white;
 }
 
+#contentpanel>div *{
+    max-width: 90vw;
+}
+
+
 .cvcontainer {
     display: flex;
     font-size: var(--textsize);
