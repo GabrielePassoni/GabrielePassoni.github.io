@@ -1,8 +1,13 @@
 window.onload = function () {
     var contentBox = document.getElementById("contentpanel");
+    var homebutton = document.getElementById("homebutton");
+    var projectsbutton = document.getElementById("projectsbutton");
+    var aboutmebutton = document.getElementById("aboutmebutton");
 
-    document.getElementById("homebutton").addEventListener("click", function (e) {
-        //this.classList.add("pressedbutton");
+    homebutton.addEventListener("click", function (e) {
+        this.classList.add("pressedbutton");
+        projectsbutton.classList.remove("pressedbutton");
+        aboutmebutton.classList.remove("pressedbutton");
         contentBox.innerHTML = `<div class="presentationcontainer">
         <img id="mainimg" src="./src/Personal.JPG" loading="eager">
         <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo dicta delectus distinctio sed numquam, aut laborum odit, tempore quasi cupiditate, repellendus ex quod facere ipsam minima repellat cumque temporibus?</div>
@@ -10,10 +15,16 @@ window.onload = function () {
     })
 
     document.getElementById("projectsbutton").addEventListener("click", function (e) {
+        this.classList.add("pressedbutton");
+        homebutton.classList.remove("pressedbutton");
+        aboutmebutton.classList.remove("pressedbutton");
         contentBox.innerHTML = ``
     })
 
     document.getElementById("aboutmebutton").addEventListener("click", function (e) {
+        this.classList.add("pressedbutton");
+        projectsbutton.classList.remove("pressedbutton");
+        homebutton.classList.remove("pressedbutton");
         contentBox.innerHTML = `<div class="cvcontainer">
         <div>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur minus rerum unde nisi, inventore

@@ -9,7 +9,8 @@
     --mainfont: 'Exo 2';
     --secondgreen: #028d32;
     --maingreen: #04ba44;
-    --maingrey: #456b5f;
+    --maingrey: #9fb1ab;
+    --mainblue: #04083b;
     --buttonsize: 2vmax;
     --textsize: 1.5vmax;
     --titlesize: 4vmax;
@@ -43,31 +44,31 @@ body {
     flex-direction: row;
     align-items: flex-start;
     gap: 2vmax;
-    padding: 1vmax;
+    padding: 0 1vmax;
     background-color: var(--maingrey);
 }
 
 #contextmenu>.button {
+    padding: 0.5vmax 0.5vmax;
     color: white;
 }
 
 
 .button {
-    border-radius: 0.8vmax;
     background-color: transparent;
-    padding: 0.2vmax 0.4vmax;
+    padding: 0.6vmax 0.4vmax;
     font-size: var(--buttonsize);
     cursor: pointer;
     user-select: none;
 }
 
-.button:hover {
-    background-color: var(--maingreen);
+#contextmenu>.button:hover {
+    background-color: var(--mainblue);
     color: white;
 }
 
 .pressedbutton {
-    background: var(--maingreen);
+    background: var(--mainblue);
 
 }
 
@@ -80,14 +81,16 @@ body {
 #downloadcvpanel>.button {
     text-decoration: none;
     color: black;
+    border-radius: 0 1.5vmax 0 1.5vmax;
     font-size: var(--textsize);
 }
 
 #downloadcvpanel>.button:hover {
     color: white;
+    background-color: var(--maingreen);
 }
 
-#contentpanel>div *{
+#contentpanel>div * {
     max-width: 90vw;
 }
 
@@ -117,4 +120,5 @@ body {
 #mainimg {
     width: 20vmax;
     height: auto;
+    border-radius: 2vmax;
 }
