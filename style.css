@@ -9,6 +9,7 @@
     --mainfont: 'Exo 2';
     --secondgreen: #028d32;
     --maingreen: #04ba44;
+    --maingrey: #456b5f;
     --buttonsize: 2vmax;
     --textsize: 1.5vmax;
     --titlesize: 4vmax;
@@ -23,7 +24,7 @@
 body {
     display: flex;
     flex-direction: column;
-    gap: 1vmax;
+    gap: 0vmax;
 }
 
 #title {
@@ -32,7 +33,7 @@ body {
     font-size: var(--titlesize);
     color: white;
     background-color: var(--maingreen);
-    padding-left: 1vmax;
+    padding: 1vmax;
     user-select: none;
 }
 
@@ -42,15 +43,19 @@ body {
     flex-direction: row;
     align-items: flex-start;
     gap: 2vmax;
-    padding-left: 1vmax;
+    padding: 1vmax;
+    background-color: var(--maingrey);
 }
+
+#contextmenu>.button {
+    color: white;
+}
+
 
 .button {
     border-radius: 0.8vmax;
-    border-color: var(--maingreen);
-    background-color: white;
+    background-color: transparent;
     padding: 0.2vmax 0.4vmax;
-    color: black;
     font-size: var(--buttonsize);
     cursor: pointer;
     user-select: none;
@@ -61,12 +66,9 @@ body {
     color: white;
 }
 
-.contentpanel {
-    font-size: var(--textsize);
-    padding: 1vmax;
-    display: flex;
-    flex-direction: column;
-    gap: 2vmax;
+.pressedbutton {
+    background: var(--maingreen);
+
 }
 
 #downloadcvpanel {
@@ -77,5 +79,37 @@ body {
 
 #downloadcvpanel>.button {
     text-decoration: none;
+    color: black;
     font-size: var(--textsize);
+}
+
+#downloadcvpanel>.button:hover {
+    color: white;
+}
+
+.cvcontainer {
+    display: flex;
+    font-size: var(--textsize);
+    flex-direction: column;
+    gap: 1vmax;
+    padding: 1vmax;
+}
+
+.presentationcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: var(--textsize);
+    height: 45vmax;
+}
+
+.presentationcontainer>div {
+    text-align: center;
+    width: 60vmax;
+}
+
+#mainimg {
+    width: 20vmax;
+    height: auto;
 }
