@@ -48,19 +48,24 @@ body {
     background-color: var(--maingrey);
 }
 
-#contextmenu>.button {
-    padding: 0.5vmax 0.5vmax;
-    color: white;
-}
-
-
 .button {
     background-color: transparent;
     padding: 0.6vmax 0.4vmax;
-    border-radius: 0 1.5vmax;
+    border-radius: 0;
     font-size: var(--buttonsize);
     cursor: pointer;
     user-select: none;
+    transition: all 0.5s;
+}
+
+.button:hover {
+    border-radius: 0 1.5vmax;
+}
+
+#contextmenu>.button {
+    padding: 0.5vmax 0.5vmax;
+    color: white;
+    transition: all 0.5s;
 }
 
 #contextmenu>.button:hover {
@@ -70,7 +75,7 @@ body {
 
 .pressedbutton {
     background: var(--mainblue);
-
+    border-radius: 0 1.5vmax;
 }
 
 #downloadcvpanel {
@@ -82,13 +87,33 @@ body {
 #downloadcvpanel>.button {
     text-decoration: none;
     color: black;
-    border-radius: 0 1.5vmax;
+    transition: all 0.5s;
+    border-radius: 0;
     font-size: var(--textsize);
 }
 
 #downloadcvpanel>.button:hover {
     color: white;
+    border-radius: 0 1.5vmax;
     background-color: var(--maingreen);
+}
+
+.appear {
+    animation: appear 1s forwards
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}
+
+#contentpanel>div{
+    opacity: 0;
 }
 
 #contentpanel>div * {
@@ -118,9 +143,15 @@ body {
     width: 60vmax;
 }
 
+#imageframe {
+    max-width: 20vmax;
+    width: 20vmax;
+}
+
 #mainimg {
     width: 20vmax;
     height: auto;
     border-radius: 2vmax;
     border: var(--maingreen) solid 1vmax;
+    transition: 1s;
 }

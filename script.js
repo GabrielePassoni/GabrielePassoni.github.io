@@ -8,10 +8,15 @@ window.onload = function () {
         this.classList.add("pressedbutton");
         projectsbutton.classList.remove("pressedbutton");
         aboutmebutton.classList.remove("pressedbutton");
-        contentBox.innerHTML = `<div class="presentationcontainer">
-        <img id="mainimg" src="./src/Personal.JPG" loading="eager">
-        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo dicta delectus distinctio sed numquam, aut laborum odit, tempore quasi cupiditate, repellendus ex quod facere ipsam minima repellat cumque temporibus?</div>
-    </div>`
+        let img = new window.Image();
+        img.src = "./src/Personal.JPG";
+        img.onload = function () {
+            contentBox.innerHTML = `<div class="presentationcontainer">
+         <img id="mainimg" src="./src/Personal.JPG" loading="eager">
+         <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo dicta delectus distinctio sed numquam, aut laborum odit, tempore quasi cupiditate, repellendus ex quod facere ipsam minima repellat cumque temporibus?</div>
+         </div>`
+         display();
+        }
     })
 
     document.getElementById("projectsbutton").addEventListener("click", function (e) {
@@ -19,6 +24,7 @@ window.onload = function () {
         homebutton.classList.remove("pressedbutton");
         aboutmebutton.classList.remove("pressedbutton");
         contentBox.innerHTML = ``
+        contentBox.querySelector("div").classList.add("appear");
     })
 
     document.getElementById("aboutmebutton").addEventListener("click", function (e) {
@@ -40,8 +46,13 @@ window.onload = function () {
                 Download here my CV (ITA)
             </a>
         </div>
-    </div>`
+        </div>`
+        display();
     })
+
+    function display() {
+        contentBox.querySelector("div").classList.add("appear");
+    }
 
     document.getElementById("homebutton").click();
 }
