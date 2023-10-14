@@ -57,6 +57,7 @@ body {
 .button {
     background-color: transparent;
     padding: 0.6vmax 0.4vmax;
+    border-radius: 0 1.5vmax;
     font-size: var(--buttonsize);
     cursor: pointer;
     user-select: none;
@@ -81,7 +82,7 @@ body {
 #downloadcvpanel>.button {
     text-decoration: none;
     color: black;
-    border-radius: 0 1.5vmax 0 1.5vmax;
+    border-radius: 0 1.5vmax;
     font-size: var(--textsize);
 }
 
@@ -121,4 +122,5 @@ body {
     width: 20vmax;
     height: auto;
     border-radius: 2vmax;
+    border: var(--maingreen) solid 1vmax;
 }
