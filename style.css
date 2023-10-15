@@ -11,9 +11,10 @@
     --maingreen: #04ba44;
     --maingrey: #9fb1ab;
     --mainblue: #04083b;
-    --buttonsize: 2vmax;
+    --buttonsize: 1.7vmax;
     --textsize: 1.5vmax;
-    --titlesize: 4vmax;
+    --titlesize: 3vmax;
+    --ptitlesize: 2vmax;
 }
 
 * {
@@ -25,7 +26,12 @@
 body {
     display: flex;
     flex-direction: column;
-    gap: 0vmax;
+}
+
+#stickydiv {
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 #title {
@@ -34,7 +40,7 @@ body {
     font-size: var(--titlesize);
     color: white;
     background-color: var(--maingreen);
-    padding: 1vmax;
+    padding: 0.5vmax;
     user-select: none;
 }
 
@@ -43,14 +49,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 2vmax;
-    padding: 0 1vmax;
+    gap: 1.5vmax;
+    padding: 0 0.8vmax;
     background-color: var(--maingrey);
 }
 
 .button {
     background-color: transparent;
-    padding: 0.6vmax 0.4vmax;
+    padding: 0.5vmax 0.3vmax;
     border-radius: 0;
     font-size: var(--buttonsize);
     cursor: pointer;
@@ -81,7 +87,7 @@ body {
 #downloadcvpanel {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 0.6vmax;
 }
 
 #downloadcvpanel>.button {
@@ -112,8 +118,8 @@ body {
     }
 }
 
-#contentpanel>div{
-    opacity: 0;
+#contentpanel>div {
+    /*opacity: 0;*/
 }
 
 #contentpanel>div * {
@@ -125,8 +131,97 @@ body {
     display: flex;
     font-size: var(--textsize);
     flex-direction: column;
-    gap: 1vmax;
+    gap: 0.8vmax;
     padding: 1vmax;
+}
+
+.projectscontainer {
+    padding: 1vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vmax;
+    font-size: var(--textsize);
+}
+
+.projectscontainer>:nth-child(1) {
+    font-size: var(--buttonsize)
+}
+
+.projectdiv {
+    cursor: pointer;
+    padding: 1vmax;
+    border: var(--mainblue) solid;
+    border-radius: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2vmax;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.projectdiv:hover {
+    border: solid var(--mainblue) 0.8vmax;
+    border-radius: 0 3vmax;
+}
+
+.projectscontainer .projectdiv.selectedp {
+    animation: selectedp 0.5s forwards;
+    border: solid var(--mainblue) 0.8vmax;
+    border-radius: 0 3vmax;
+
+}
+
+@keyframes selectedp {
+    from {
+        background-color: transparent;
+        color: black;
+    }
+
+    to {
+        background-color: var(--mainblue);
+        color: white;
+    }
+}
+
+.projectdiv>div:nth-child(2) {
+    font-size: var(--ptitlesize);
+    font-weight: 700;
+}
+
+#contentpanel .projectdiv>img {
+    max-width: 30vmax;
+    border-radius: 1.5vmax;
+    border: var(--maingreen)
+}
+
+.pdescription {
+    display: none;
+    text-align: center;
+}
+
+.pdescription.visibledescription {
+    display: block;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    animation: appear2 1s forwards;
+    animation-delay: 0.5s
+}
+
+@keyframes appear2 {
+    from {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: auto;
+        height: auto;
+    }
+
 }
 
 .presentationcontainer {
@@ -135,23 +230,29 @@ body {
     align-items: center;
     justify-content: space-evenly;
     font-size: var(--textsize);
-    height: 45vmax;
+    height: 50vmax;
 }
 
 .presentationcontainer>div {
     text-align: center;
-    width: 60vmax;
-}
-
-#imageframe {
-    max-width: 20vmax;
-    width: 20vmax;
+    width: 50vmax;
 }
 
 #mainimg {
-    width: 20vmax;
+    width: 18vmax;
     height: auto;
-    border-radius: 2vmax;
+    border-radius: 0 3vmax;
     border: var(--maingreen) solid 1vmax;
     transition: 1s;
+}
+
+#contactpanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#contactpanel img {
+    width: 3vmax;
 }
