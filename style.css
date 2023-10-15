@@ -5,6 +5,15 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:700);
 @import url(https://fonts.googleapis.com/css?family=Exo+2:900);
 
+@media screen and (max-width: 600px) {
+    :root {
+        --buttonsize: 1.7vw;
+        --textsize: 1.5vw;
+        --titlesize: 3vw;
+        --ptitlesize: 2vw;
+    }
+}
+
 :root {
     --mainfont: 'Exo 2';
     --secondgreen: #028d32;
