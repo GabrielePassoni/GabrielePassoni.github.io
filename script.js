@@ -52,8 +52,11 @@ window.onload = function () {
             e.addEventListener("click", function (event) {
                 if (e.classList.contains("selectedp")) {
                     e.classList.remove("selectedp");
+                    e.querySelector(".pdescription").classList.remove("visibledescription");
+                    e.querySelector(".pdescription").classList.add("hiddendescription");
                 } else {
                     e.classList.add("selectedp");
+                    e.querySelector(".pdescription").classList.remove("hiddendescription");
                     e.querySelector(".pdescription").classList.add("visibledescription");
                 }
             })
