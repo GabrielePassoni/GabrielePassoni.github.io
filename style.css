@@ -5,12 +5,21 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:700);
 @import url(https://fonts.googleapis.com/css?family=Exo+2:900);
 
-@media screen and (max-width: 600px) {
+@media (orientation: portrait) {
     :root {
-        --buttonsize: 2.8vw;
-        --textsize: 2vw;
+        --buttonsize: 2.55vw;
+        --textsize: 2.25vw;
         --titlesize: 4.5vw;
         --ptitlesize: 3vw;
+    }
+}
+
+@media (orientation: landscape) {
+    :root {
+        --buttonsize: 1.7vw;
+        --textsize: 1.5vw;
+        --titlesize: 3vw;
+        --ptitlesize: 2vw;
     }
 }
 
@@ -20,10 +29,6 @@
     --maingreen: #04ba44;
     --maingrey: #9fb1ab;
     --mainblue: #04083b;
-    --buttonsize: 1.7vw;
-    --textsize: 1.5vw;
-    --titlesize: 3vw;
-    --ptitlesize: 2vw;
 }
 
 * {
@@ -182,26 +187,48 @@ body {
         border: solid var(--mainblue) 0.8vw;
         border-radius: 0 3vw;
     }
-}
 
-.projectscontainer .projectdiv.selectedp {
-    animation: selectedp 0.5s forwards;
-    border: solid var(--mainblue) 0.8vw;
-    border-radius: 0 3vw;
+    @keyframes selectedp {
+        from {
+            background-color: transparent;
+            color: black;
+        }
 
-}
-
-@keyframes selectedp {
-    from {
-        background-color: transparent;
-        color: black;
+        to {
+            background-color: var(--mainblue);
+            color: white;
+        }
     }
 
-    to {
-        background-color: var(--mainblue);
-        color: white;
+    .projectscontainer .projectdiv.selectedp {
+        animation: selectedp 0.5s forwards;
+        border: solid var(--mainblue) 0.8vw;
+        border-radius: 0 3vw;
     }
 }
+
+@media (hover: none) {
+    @keyframes selectedp {
+        from {
+            background-color: transparent;
+            color: black;
+            border: solid var(--mainblue);
+        }
+
+        to {
+            background-color: var(--mainblue);
+            color: white;
+            border: solid var(--mainblue) 0.8vw;
+        }
+    }
+
+    .projectscontainer .projectdiv.selectedp {
+        animation: selectedp 0.5s forwards;
+        border-radius: 0 3vw;
+    }
+}
+
+
 
 .projectdiv>div:nth-child(2) {
     font-size: var(--ptitlesize);
@@ -297,7 +324,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     font-size: var(--textsize);
-    height: 50vw;
+    height: 60vw;
 }
 
 .presentationcontainer>div {
