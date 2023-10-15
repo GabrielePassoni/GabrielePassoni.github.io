@@ -7,10 +7,10 @@
 
 @media screen and (max-width: 600px) {
     :root {
-        --buttonsize: 1.7vw;
-        --textsize: 1.5vw;
-        --titlesize: 3vw;
-        --ptitlesize: 2vw;
+        --buttonsize: 2.8vw;
+        --textsize: 2vw;
+        --titlesize: 4.5vw;
+        --ptitlesize: 3vw;
     }
 }
 
