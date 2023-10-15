@@ -34,21 +34,67 @@ window.onload = function () {
         this.classList.add("pressedbutton");
         homebutton.classList.remove("pressedbutton");
         aboutmebutton.classList.remove("pressedbutton");
-        contentBox.innerHTML = ``
+        contentBox.innerHTML = `<div class="projectscontainer">
+        <div>Here are my projects, click on them to know more!</div>
+        <div class="projectdiv">
+            <img
+                src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
+            <div class="ptitle">Veryverylongtitle</div>
+            <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
+                Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
+                doloremque, quia aut perspiciatis.</div>
+        </div>
+        <div class="projectdiv">
+            <img
+                src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
+            <div class="ptitle">Veryverylongtitle</div>
+            <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
+                Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
+                doloremque, quia aut perspiciatis.</div>
+        </div>
+        <div class="projectdiv">
+            <img
+                src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
+            <div class="ptitle">Veryverylongtitle</div>
+            <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
+                Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
+                doloremque, quia aut perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nisi
+                blanditiis, rem accusamus voluptas nesciunt porro earum soluta facilis eius exercitationem
+                doloremque ipsa, corrupti, commodi a totam deserunt ipsum provident. Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Commodi nam rem veritatis sunt quam tempore eaque! Quas veritatis
+                magnam odit quod ipsum cum, obcaecati laudantium veniam aliquam nesciunt sint sit. Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Debitis porro a dolore quo ipsum quos quia possimus illum
+                repellendus iusto. Provident culpa nihil aliquid ullam nemo vero laudantium quam voluptas! Lorem
+                ipsum dolor sit amet consectetur, adipisicing elit. Quod adipisci aliquam et aperiam voluptates
+                repellendus aliquid eaque minus quidem minima consequuntur voluptatum eligendi, inventore dolorem ut
+                sequi quasi, iusto asperiores?</div>
+        </div>
+        <div class="projectdiv">
+            <img
+                src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
+            <div class="ptitle">Veryverylongtitle</div>
+            <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
+                Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
+                doloremque, quia aut perspiciatis.</div>
+        </div>
+        <div class="projectdiv">
+            <img
+                src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
+            <div class="ptitle">Veryverylongtitle</div>
+            <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
+                Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
+                doloremque, quia aut perspiciatis.</div>
+        </div>
+        <div class="projectdiv">
+            <img
+                src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
+            <div class="ptitle">Veryverylongtitle</div>
+            <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
+                Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
+                doloremque, quia aut perspiciatis.</div>
+        </div>
+    </div>`
         contentBox.querySelectorAll(".projectdiv").forEach((e, n, l) => {
-            e.addEventListener("click", function (event) {
-                if (e.classList.contains("selectedp")) {
-                    e.classList.remove("selectedp");
-                } else {
-                    e.classList.add("selectedp");
-                    e.querySelector(".pdescription").classList.add("visibledescription");
-                }
-            })
-        })
-        contentBox.querySelector("div").classList.add("appear");
-    })
-
-    contentBox.querySelectorAll(".projectdiv").forEach((e, n, l) => {
             e.addEventListener("click", function (event) {
                 if (e.classList.contains("selectedp")) {
                     e.classList.remove("selectedp");
@@ -61,6 +107,8 @@ window.onload = function () {
                 }
             })
         })
+        display();
+    })
 
     document.getElementById("aboutmebutton").addEventListener("click", function (e) {
         this.classList.add("pressedbutton");
@@ -89,6 +137,6 @@ window.onload = function () {
         contentBox.querySelector("div").classList.add("appear");
     }
 
-    //document.getElementById("homebutton").click();
+    document.getElementById("homebutton").click();
 }
 

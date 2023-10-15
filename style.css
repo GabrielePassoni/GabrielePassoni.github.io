@@ -74,8 +74,10 @@ body {
     transition: all 0.5s;
 }
 
-.button:hover {
-    border-radius: 0 1.5vw;
+@media (hover: hover) {
+    .button:hover {
+        border-radius: 0 1.5vw;
+    }
 }
 
 #contextmenu>.button {
@@ -84,9 +86,11 @@ body {
     transition: all 0.5s;
 }
 
-#contextmenu>.button:hover {
-    background-color: var(--mainblue);
-    color: white;
+@media (hover: hover) {
+    #contextmenu>.button:hover {
+        background-color: var(--mainblue);
+        color: white;
+    }
 }
 
 .pressedbutton {
@@ -108,10 +112,12 @@ body {
     font-size: var(--textsize);
 }
 
-#downloadcvpanel>.button:hover {
-    color: white;
-    border-radius: 0 1.5vw;
-    background-color: var(--maingreen);
+@media (hover: hover) {
+    #downloadcvpanel>.button:hover {
+        color: white;
+        border-radius: 0 1.5vw;
+        background-color: var(--maingreen);
+    }
 }
 
 .appear {
@@ -129,7 +135,7 @@ body {
 }
 
 #contentpanel>div {
-    /*opacity: 0;*/
+    opacity: 0;
 }
 
 #contentpanel>div * {
@@ -171,9 +177,11 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.projectdiv:hover {
-    border: solid var(--mainblue) 0.8vw;
-    border-radius: 0 3vw;
+@media (hover: hover) {
+    .projectdiv:hover {
+        border: solid var(--mainblue) 0.8vw;
+        border-radius: 0 3vw;
+    }
 }
 
 .projectscontainer .projectdiv.selectedp {
