@@ -35,7 +35,7 @@ window.onload = function () {
         homebutton.classList.remove("pressedbutton");
         aboutmebutton.classList.remove("pressedbutton");
         contentBox.innerHTML = `<div class="projectscontainer">
-        <div>Here are my projects, click on them to know more!</div>
+        <div>Here are my projects, click on them for resources and to know more!</div>
         <div class="projectdiv">
             <img
                 src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
@@ -47,7 +47,9 @@ window.onload = function () {
         <div class="projectdiv">
             <img
                 src="https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1">
-            <div class="ptitle">Veryverylongtitle</div>
+            <div class="ptitle">
+                Veryverylongtiabcdefghijkl lllllllll
+            </div>
             <div class="pdescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus a esse minima!
                 Fuga voluptas, quos corrupti tempora amet nihil sed similique quisquam autem magnam dicta quibusdam
                 doloremque, quia aut perspiciatis.</div>
