@@ -140,7 +140,7 @@ body {
 }
 
 #contentpanel>div {
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 #contentpanel>div * {
@@ -173,6 +173,7 @@ body {
     cursor: pointer;
     user-select: none;
     padding: 1vw;
+    max-height: 20vw;
     border: var(--mainblue) solid;
     border-radius: 0;
     display: flex;
@@ -246,6 +247,7 @@ body {
     width: 0;
     height: 0;
     text-align: justify;
+    overflow: hidden;
 }
 
 .pdescription.visibledescription {
