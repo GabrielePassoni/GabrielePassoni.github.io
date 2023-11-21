@@ -1,9 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+3);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:900);
-@import url(https://fonts.googleapis.com/css?family=Exo+2);
-@import url(https://fonts.googleapis.com/css?family=Exo+2:700);
-@import url(https://fonts.googleapis.com/css?family=Exo+2:900);
+@font-face {
+    font-family: 'aptos';
+    src: url('src\\aptosfont\\aptos.ttf'),
+        url('src\\aptosfont\\aptos-bold.ttf'),
+}
 
 @media (orientation: portrait) {
     :root {
@@ -40,7 +39,7 @@
 
 
 :root {
-    --mainfont: 'Exo 2';
+    --mainfont: 'aptos';
     --secondgreen: #028d32;
     --maingreen: #04ba44;
     --maingrey: #9fb1ab;
@@ -90,6 +89,7 @@ body {
     padding: 0.5vw 0.3vw;
     border-radius: 0;
     font-size: var(--buttonsize);
+    font-weight: bold;
     cursor: pointer;
     user-select: none;
     transition: all 0.5s;
