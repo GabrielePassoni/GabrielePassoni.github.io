@@ -11,21 +11,7 @@ window.onload = function () {
         let img = new window.Image();
         img.src = "./src/Personal.JPG";
         img.onload = function () {
-            contentBox.innerHTML = `<div class="presentationcontainer">
-            <img id="mainimg" src="./src/Personal.JPG" loading="eager">
-            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti explicabo dicta delectus distinctio
-                sed numquam, aut laborum odit, tempore quasi cupiditate, repellendus ex quod facere ipsam minima
-                repellat cumque temporibus?</div>
-            <div id="contactpanel">
-                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a>
-                <a href=""><img
-                        src="//upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png"></a>
-                <a href=""><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"></a>
-                <a href=""><img
-                        src="https://static.vecteezy.com/system/resources/previews/009/973/213/original/email-and-mail-icon-sign-symbol-design-free-png.png"></a>
-            </div>
-        </div>`
+            contentBox.src="home.html"
             display();
         }
     })
