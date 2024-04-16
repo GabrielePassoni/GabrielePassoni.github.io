@@ -22,29 +22,33 @@ window.onload = function () {
         this.classList.add("pressedbutton")
         homebutton.classList.remove("pressedbutton")
         aboutmebutton.classList.remove("pressedbutton")
-        contentBox.srcdoc = "./projects.html"
-        contentBox.querySelectorAll(".projectdiv").forEach((e, n, l) => {
-            e.addEventListener("click", function (event) {
-                if (e.classList.contains("selectedp")) {
-                    e.classList.remove("selectedp")
-                    e.querySelector(".pdescription").classList.remove("visibledescription")
-                    e.querySelector(".pdescription").classList.add("hiddendescription")
-                } else {
-                    e.classList.add("selectedp")
-                    e.querySelector(".pdescription").classList.remove("hiddendescription")
-                    e.querySelector(".pdescription").classList.add("visibledescription")
-                }
+        load("https://gabrielepassoni.github.io/projects.html").then(value => {
+            contentBox.innerHTML = value
+            contentBox.querySelectorAll(".projectdiv").forEach((e, n, l) => {
+                e.addEventListener("click", function (event) {
+                    if (e.classList.contains("selectedp")) {
+                        e.classList.remove("selectedp")
+                        e.querySelector(".pdescription").classList.remove("visibledescription")
+                        e.querySelector(".pdescription").classList.add("hiddendescription")
+                    } else {
+                        e.classList.add("selectedp")
+                        e.querySelector(".pdescription").classList.remove("hiddendescription")
+                        e.querySelector(".pdescription").classList.add("visibledescription")
+                    }
+                })
             })
+            display()
         })
-        display()
     })
 
     document.getElementById("aboutmebutton").addEventListener("click", function (e) {
         this.classList.add("pressedbutton")
         projectsbutton.classList.remove("pressedbutton")
         homebutton.classList.remove("pressedbutton")
-        contentBox.srcdoc = "./aboutme.html"
-        display()
+        load("https://gabrielepassoni.github.io/aboutme.html").then(value => {
+            contentBox.innerHTML = value
+            display()
+        })
     })
 
     function display() {
