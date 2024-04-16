@@ -8,14 +8,10 @@ window.onload = function () {
         this.classList.add("pressedbutton")
         projectsbutton.classList.remove("pressedbutton")
         aboutmebutton.classList.remove("pressedbutton")
-        /*let img = new window.Image()
-        img.src = "./src/Personal.jpg"
-        img.onload = function () {*/
         load("https://gabrielepassoni.github.io/home.html").then(value => {
             contentBox.innerHTML = value
             display()
         })
-        //}
     })
 
     document.getElementById("projectsbutton").addEventListener("click", function (e) {
@@ -25,7 +21,7 @@ window.onload = function () {
         load("https://gabrielepassoni.github.io/projects.html").then(value => {
             contentBox.innerHTML = value
             contentBox.querySelectorAll(".projectdiv").forEach(e => {
-                e.addEventListener("click", function (event) {
+                e.addEventListener("click", event => {
                     if (e.classList.contains("selectedp")) {
                         e.classList.remove("selectedp")
                         e.querySelector(".pdescription").classList.remove("visibledescription")
@@ -37,6 +33,7 @@ window.onload = function () {
                     }
                 })
             })
+            contentBox.querySelectorAll(".projectdiv a").forEach(e => e.addEventListener("click", event => event.stopPropagation()))
             display()
         })
     })
