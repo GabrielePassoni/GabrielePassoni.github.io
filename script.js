@@ -33,7 +33,10 @@ window.onload = function () {
                     }
                 })
             })
-            contentBox.querySelectorAll(".projectdiv a").forEach(e => e.addEventListener("click", event => event.stopPropagation()))
+            contentBox.querySelectorAll(".projectdiv a").forEach(e => {
+                e.addEventListener("click", event => event.stopPropagation())
+                e.classList.add("descanchor")
+            })
             display()
         })
     })
