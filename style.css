@@ -44,6 +44,7 @@
     --maingreen: #04ba44;
     --maingrey: #9fb1ab;
     --mainblue: #04083b;
+    --desclinkblue: #9a9ff2;
 }
 
 * {
@@ -372,4 +373,14 @@ body {
 
 #contactpanel img {
     width: 3vw;
+}
+
+.descanchor {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--desclinkblue);
+}
+
+.descanchor:hover {
+    text-decoration: underline;
 }
