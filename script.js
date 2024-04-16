@@ -49,8 +49,6 @@ window.onload = function () {
         contentBox.querySelector("div").classList.add("appear")
     }
 
-
-
     function load(httpsString) {
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest()
