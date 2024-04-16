@@ -11,8 +11,10 @@ window.onload = function () {
         let img = new window.Image()
         img.src = "./src/Personal.JPG"
         img.onload = function () {
-            load("https://gabrielepassoni.github.io/home.html").then(value => console.log(value))
-            display()
+            load("https://gabrielepassoni.github.io/home.html").then(value => {
+                contentBox.innerHTML = value
+                display()
+            })
         }
     })
 
