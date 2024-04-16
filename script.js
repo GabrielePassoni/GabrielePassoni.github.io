@@ -11,7 +11,7 @@ window.onload = function () {
         let img = new window.Image()
         img.src = "./src/Personal.JPG"
         img.onload = function () {
-            contentBox.innerHTML=
+            load("https://gabrielepassoni.github.io/home.html").then(value => contentBox.innerHTML = value)
             display()
         }
     })
