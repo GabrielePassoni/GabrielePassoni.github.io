@@ -24,7 +24,7 @@ window.onload = function () {
         aboutmebutton.classList.remove("pressedbutton")
         load("https://gabrielepassoni.github.io/projects.html").then(value => {
             contentBox.innerHTML = value
-            contentBox.querySelectorAll(".projectdiv").forEach((e, n, l) => {
+            contentBox.querySelectorAll(".projectdiv").forEach(e => {
                 e.addEventListener("click", function (event) {
                     if (e.classList.contains("selectedp")) {
                         e.classList.remove("selectedp")
