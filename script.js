@@ -11,7 +11,7 @@ window.onload = function () {
         let img = new window.Image();
         img.src = "./src/Personal.JPG";
         img.onload = function () {
-            contentBox.src="./home.html"
+            contentBox.srcdoc = "./home.html"
             display();
         }
     })
@@ -20,7 +20,7 @@ window.onload = function () {
         this.classList.add("pressedbutton");
         homebutton.classList.remove("pressedbutton");
         aboutmebutton.classList.remove("pressedbutton");
-        contentBox.src="./projects.html"
+        contentBox.srcdoc = "./projects.html"
         contentBox.querySelectorAll(".projectdiv").forEach((e, n, l) => {
             e.addEventListener("click", function (event) {
                 if (e.classList.contains("selectedp")) {
@@ -41,7 +41,7 @@ window.onload = function () {
         this.classList.add("pressedbutton");
         projectsbutton.classList.remove("pressedbutton");
         homebutton.classList.remove("pressedbutton");
-        contentBox.src = "./aboutme.html"
+        contentBox.srcdoc = "./aboutme.html"
         display();
     })
 
