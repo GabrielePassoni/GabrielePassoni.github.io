@@ -52,20 +52,16 @@ window.onload = function () {
     })
 
     function display() {
-        contentBox.querySelector("div").classList.add("appear")
+        let images = [...contentBox.querySelectorAll("img")]
+        Promise.all(images.map(img => new Promise(resolve => img.onload = resolve)))
+            .then(() => contentBox.querySelector("div").classList.add("appear"))
     }
 
     function load(httpsString) {
         return new Promise(resolve => {
             let request = new XMLHttpRequest()
             request.onreadystatechange = () => {
-                if (request.readyState == request.DONE) {
-                    console.log(request.responseType);
-                    let reqDoc = request.response
-                    let images = [...reqDoc.querySelectorAll("img")]
-                    Promise.all(images.map(img => new Promise(resolve => img.onload = resolve)))
-                        .then(() => resolve(request.responseText))
-                }
+                if (request.readyState == request.DONE) resolve(request.responseText)
             }
             request.open("GET", httpsString)
             request.send()
