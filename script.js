@@ -60,6 +60,7 @@ window.onload = function () {
             let request = new XMLHttpRequest()
             request.onreadystatechange = () => {
                 if (request.readyState == request.DONE) {
+                    console.log(request.responseType);
                     let reqDoc = request.response
                     let images = [...reqDoc.querySelectorAll("img")]
                     Promise.all(images.map(img => new Promise(resolve => img.onload = resolve)))
@@ -70,14 +71,6 @@ window.onload = function () {
             request.send()
         })
     }
-
-    const images = [...document.querySelectorAll("div img")];
-
-    // list all image widths and heights _after_ the images have loaded:
-    Promise.all(images.map(im => new Promise(resolve => im.onload = resolve))).then(() => {
-        console.log("The images have loaded at last!\nHere are their dimensions (width,height):");
-        console.log(images.map(im => ([im.width, im.height])));
-    })
 
     document.getElementById("homebutton").click()
 }
