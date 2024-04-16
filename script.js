@@ -8,14 +8,14 @@ window.onload = function () {
         this.classList.add("pressedbutton")
         projectsbutton.classList.remove("pressedbutton")
         aboutmebutton.classList.remove("pressedbutton")
-        let img = new window.Image()
-        img.src = "./src/Personal.JPG"
-        img.onload = function () {
+        /*let img = new window.Image()
+        img.src = "./src/Personal.jpg"
+        img.onload = function () {*/
             load("https://gabrielepassoni.github.io/home.html").then(value => {
                 contentBox.innerHTML = value
                 display()
             })
-        }
+        //}
     })
 
     document.getElementById("projectsbutton").addEventListener("click", function (e) {
