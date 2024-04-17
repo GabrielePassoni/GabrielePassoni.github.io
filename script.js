@@ -70,4 +70,3 @@ window.onload = function () {
 
     document.getElementById("homebutton").click()
 }
-
