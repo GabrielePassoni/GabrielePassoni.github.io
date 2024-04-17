@@ -6,10 +6,14 @@
 
 @media (orientation: portrait) {
     :root {
-        --buttonsize: 2.55vw;
-        --textsize: 2.25vw;
-        --titlesize: 4.5vw;
-        --ptitlesize: 3vw;
+        --buttonsize: 4.7vw;
+        --textsize: 4vw;
+        --titlesize: 8vw;
+        --ptitlesize: 4vw;
+        --ptextsize: 3vw;
+        --pheadersize: 4vw;
+        --mainimgw: 30vw;
+        --pimgw: 
     }
 }
 
@@ -19,6 +23,10 @@
         --textsize: 1.5vw;
         --titlesize: 3vw;
         --ptitlesize: 2vw;
+        --ptextsize: 1.5vw;
+        --pheadersize: 1.7vw;
+        --mainimgw: 18vw;
+        --pimgw: 
     }
 }
 
@@ -179,11 +187,11 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1vw;
-    font-size: var(--textsize);
+    font-size: var(--ptextsize);
 }
 
 .projectscontainer>:nth-child(1) {
-    font-size: var(--buttonsize);
+    font-size: var(--pheadersize);
 }
 
 .projectdiv {
@@ -249,7 +257,7 @@ body {
 
 
 .projectdiv>div:nth-child(2) {
-    font-size: var(--buttonsize);
+    font-size: var(--ptitlesize);
     font-weight: 700;
     text-align: center;
     overflow: hidden;
@@ -357,7 +365,7 @@ body {
 }
 
 #mainimg {
-    width: 18vw;
+    width: var(--presentationimgw);
     height: auto;
     border-radius: 0 3vw;
     border: var(--maingreen) solid 1vw;
