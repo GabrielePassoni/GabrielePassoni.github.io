@@ -24,9 +24,11 @@ window.onload = function () {
                 e.addEventListener("click", event => {
                     if (e.classList.contains("selectedp")) {
                         e.classList.remove("selectedp")
+                        e.classList.add("unselectedp")
                         e.querySelector(".pdescription").classList.remove("visibledescription")
                         e.querySelector(".pdescription").classList.add("hiddendescription")
                     } else {
+                        e.classList.remove("unselectedp")
                         e.classList.add("selectedp")
                         e.querySelector(".pdescription").classList.remove("hiddendescription")
                         e.querySelector(".pdescription").classList.add("visibledescription")

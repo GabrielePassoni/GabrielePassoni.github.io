@@ -9,11 +9,17 @@
         --buttonsize: 4.7vw;
         --textsize: 4vw;
         --titlesize: 8vw;
+        /*context menu*/
+        --cmpadding: 1.5vw;
+        /*home.html*/
+        --mainimgw: 35vw;
+        --contacticonw: 7vw;
+        --homeheight: 140vw;
+        /*projects page*/
         --ptitlesize: 4vw;
         --ptextsize: 3vw;
         --pheadersize: 4vw;
-        --mainimgw: 30vw;
-        --pimgw: 
+        --pimgw: 50vw;
     }
 }
 
@@ -22,11 +28,17 @@
         --buttonsize: 1.7vw;
         --textsize: 1.5vw;
         --titlesize: 3vw;
+        /*context menu*/
+        --cmpadding: 0.5vw;
+        /*home.html*/
+        --mainimgw: 18vw;
+        --contacticonw: 3vw;
+        --homeheight: 60vw;
+        /*projects page*/
         --ptitlesize: 2vw;
         --ptextsize: 1.5vw;
         --pheadersize: 1.7vw;
-        --mainimgw: 18vw;
-        --pimgw: 
+        --pimgw: 30vw;
     }
 }
 
@@ -50,7 +62,7 @@
     --mainfont: 'aptos';
     --secondgreen: #028d32;
     --maingreen: #04ba44;
-    --maingrey: #9fb1ab;
+    --maingrey: #849791;
     --mainblue: #04083b;
     --desclinkblue: #9a9ff2;
 }
@@ -88,8 +100,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 1.5vw;
-    padding: 0 0.8vw;
+    gap: var(--cmpadding);
+    padding: 0 var(--cmpadding);
     background-color: var(--maingrey);
 }
 
@@ -106,12 +118,12 @@ body {
 
 @media (hover: hover) {
     .button:hover {
-        border-radius: 0 1.5vw;
+        border-radius: 0 calc(var(--buttonsize)*0.7);
     }
 }
 
 #contextmenu>.button {
-    padding: 0.5vw 0.5vw;
+    padding: calc(var(--buttonsize)*0.3);
     color: white;
     transition: all 0.5s;
 }
@@ -125,7 +137,7 @@ body {
 
 .pressedbutton {
     background: var(--mainblue);
-    border-radius: 0 1.5vw;
+    border-radius: 0 calc(var(--buttonsize)*0.7);
 }
 
 #downloadcvpanel {
@@ -136,6 +148,7 @@ body {
 
 #downloadcvpanel>.button {
     text-decoration: none;
+    text-align: center;
     color: black;
     transition: all 0.5s;
     border-radius: 0;
@@ -145,7 +158,7 @@ body {
 @media (hover: hover) {
     #downloadcvpanel>.button:hover {
         color: white;
-        border-radius: 0 1.5vw;
+        border-radius: 0 calc(var(--buttonsize)*0.7);
         background-color: var(--maingreen);
     }
 }
@@ -177,6 +190,7 @@ body {
     display: flex;
     font-size: var(--textsize);
     flex-direction: column;
+    align-items: center;
     gap: 0.8vw;
     padding: 1vw;
 }
@@ -198,7 +212,7 @@ body {
     cursor: pointer;
     user-select: none;
     padding: 1vw;
-    max-height: 20vw;
+    max-height: fit-content;
     border: var(--mainblue) solid;
     border-radius: 0;
     display: flex;
@@ -210,8 +224,8 @@ body {
 
 @media (hover: hover) {
     .projectdiv:hover {
-        border: solid var(--mainblue) 0.8vw;
-        border-radius: 0 3vw;
+        border: solid var(--mainblue) calc(var(--pimgw)*0.03);
+        border-radius: 0 calc(var(--pimgw)*0.1);
     }
 
     @keyframes selectedp {
@@ -226,10 +240,26 @@ body {
         }
     }
 
+    @keyframes unselectedp {
+        to {
+            background-color: transparent;
+            color: black;
+        }
+
+        from {
+            background-color: var(--mainblue);
+            color: white;
+        }
+    }
+
     .projectscontainer .projectdiv.selectedp {
         animation: selectedp 0.5s forwards;
         border: solid var(--mainblue) 0.8vw;
         border-radius: 0 3vw;
+    }
+
+    .projectscontainer .projectdiv.unselectedp {
+        animation: unselectedp 0.5s forwards;
     }
 }
 
@@ -248,13 +278,28 @@ body {
         }
     }
 
+    @keyframes unselectedp {
+        to {
+            background-color: transparent;
+            color: black;
+        }
+
+        from {
+            background-color: var(--mainblue);
+            color: white;
+        }
+    }
+
+
     .projectscontainer .projectdiv.selectedp {
         animation: selectedp 0.5s forwards;
         border-radius: 0 3vw;
     }
+
+    .projectscontainer .projectdiv.unselectedp {
+        animation: unselectedp 0.5s forwards;
+    }
 }
-
-
 
 .projectdiv>div:nth-child(2) {
     font-size: var(--ptitlesize);
@@ -267,9 +312,36 @@ body {
 }
 
 #contentpanel .projectdiv>img {
-    max-width: 30vw;
+    max-width: var(--pimgw);
     border-radius: 1.5vw;
-    border: var(--maingreen)
+}
+
+#contentpanel .projectdiv.selectedp>img {
+    animation: shrinkimg 0.3s forwards;
+}
+
+#contentpanel .projectdiv.unselectedp>img {
+    animation: enlargeimg 0.3s forwards;
+}
+
+@keyframes shrinkimg {
+    from {
+        max-width: var(--pimgw);
+    }
+
+    to {
+        max-width: calc(var(--pimgw)*0.7);
+    }
+}
+
+@keyframes enlargeimg {
+    to {
+        max-width: var(--pimgw);
+    }
+
+    from {
+        max-width: calc(var(--pimgw)*0.7);
+    }
 }
 
 .pdescription {
@@ -277,6 +349,7 @@ body {
     width: 0;
     height: 0;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .pdescription.visibledescription {
@@ -289,7 +362,7 @@ body {
     max-height: 0;
     padding-right: 2vw;
     animation: appear1 0.4s forwards, appear2 0.4s forwards;
-    animation-delay: 0s, 0.2s;
+    animation-delay: 0s, 0.1s;
 }
 
 .pdescription.hiddendescription {
@@ -300,8 +373,8 @@ body {
     opacity: 1;
     max-width: 100vw;
     max-height: 18vw;
-    animation: disappear1 0.3s forwards, disappear2 0.4s forwards;
-    animation-delay: 0s, 0.1s;
+    animation: disappear1 0.4s forwards, disappear2 0.4s forwards;
+    animation-delay: 0s, 1s;
 }
 
 @keyframes appear1 {
@@ -328,6 +401,16 @@ body {
 
 }
 
+@keyframes appear3 {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: var(--mainblue);
+    }
+}
+
 @keyframes disappear1 {
     from {
         opacity: 1;
@@ -335,6 +418,7 @@ body {
 
     to {
         opacity: 0;
+        font-size: 0;
     }
 }
 
@@ -350,13 +434,23 @@ body {
     }
 }
 
+@keyframes disappear3 {
+    from {
+        background-color: var(--mainblue);
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
 .presentationcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     font-size: var(--textsize);
-    height: 60vw;
+    height: var(--homeheight);
 }
 
 .presentationcontainer>div {
@@ -365,10 +459,10 @@ body {
 }
 
 #mainimg {
-    width: var(--presentationimgw);
+    width: var(--mainimgw);
     height: auto;
-    border-radius: 0 3vw;
-    border: var(--maingreen) solid 1vw;
+    border-radius: 0 calc(var(--mainimgw)*0.1);
+    border: var(--maingreen) solid calc(var(--mainimgw)*0.06);
     transition: 1s;
 }
 
@@ -380,7 +474,8 @@ body {
 }
 
 #contactpanel img {
-    width: 3vw;
+    width: var(--contacticonw);
+    height: auto;
 }
 
 .descanchor {
