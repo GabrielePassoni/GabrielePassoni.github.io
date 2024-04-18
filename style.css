@@ -12,9 +12,10 @@
         /*context menu*/
         --cmpadding: 1.5vw;
         /*home.html*/
-        --mainimgw: 35vw;
         --contacticonw: 7vw;
-        --homeheight: 140vw;
+        --mainimgflexgrow: 0.7;
+        --mainimgb: 2vw;
+        --homeheight: 100%;
         /*projects page*/
         --ptitlesize: 4vw;
         --ptextsize: 3vw;
@@ -26,14 +27,15 @@
 @media (orientation: landscape) {
     :root {
         --buttonsize: 1.7vw;
-        --textsize: 1.5vw;
+        --textsize: 1.4vw;
         --titlesize: 3vw;
         /*context menu*/
         --cmpadding: 0.5vw;
         /*home.html*/
-        --mainimgw: 15vw;
+        --mainimgflexgrow: 0.8;
+        --mainimgb: 0.7vw;
         --contacticonw: 3vw;
-        --homeheight: 45vw;
+        --homeheight: 100%;
         /*projects page*/
         --ptitlesize: 2vw;
         --ptextsize: 1.5vw;
@@ -76,6 +78,7 @@
 
 body {
     display: flex;
+    height: 100vh;
     flex-direction: column;
 }
 
@@ -175,6 +178,10 @@ body {
     to {
         opacity: 100;
     }
+}
+
+#contentpanel {
+    flex-grow: 1;
 }
 
 #contentpanel>div {
@@ -446,6 +453,7 @@ body {
 
 .presentationcontainer {
     display: flex;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -459,10 +467,10 @@ body {
 }
 
 #mainimg {
-    width: var(--mainimgw);
-    height: auto;
-    border-radius: 0 calc(var(--mainimgw)*0.1);
-    border: var(--maingreen) solid calc(var(--mainimgw)*0.06);
+    flex-grow: var(--mainimgflexgrow);
+    height: 1px;
+    border-radius: 0 calc(var(--mainimgb));
+    border: var(--maingreen) solid calc(var(--mainimgb));
     transition: 1s;
 }
 
