@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'aptos';
-    src: url('src\\aptosfont\\aptos.ttf'),
-        url('src\\aptosfont\\aptos-bold.ttf'),
+    src: url('..\\src\\aptosfont\\aptos.ttf'),
+        url('..\\src\\aptosfont\\aptos-bold.ttf'),
 }
 
 @media (orientation: portrait) {
