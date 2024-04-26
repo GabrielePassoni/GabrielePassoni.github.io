@@ -228,7 +228,28 @@
     }
 }
 
+#index {
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    width: 100vw;
+}
 
+.indexcircle {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border: black solid 2px;
+    border-radius: 50%;
+    transition: all 0.8s;
+}
+
+.indexcircle.selectedcircle {
+    background-color: green;
+    border: green solid 2px;
+}
 
 .descanchor {
     text-decoration: none;
