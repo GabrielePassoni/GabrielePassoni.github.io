@@ -39,6 +39,9 @@ window.onload = function () {
                 e.addEventListener("click", event => event.stopPropagation())
                 e.classList.add("descanchor")
             })
+            let sliderScript = document.createElement("script");
+            sliderScript.setAttribute("src", "scripts/slider.js");
+            contentBox.appendChild(sliderScript)
             display()
         })
     })
