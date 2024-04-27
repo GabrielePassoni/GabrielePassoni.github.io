@@ -30,6 +30,7 @@ function customFinishListener(value) {
                 slider.removeEventListener('wheel', finishListener)
                 slider.addEventListener('wheel', slideListener)
             }
+            wheelEvent.stopPropagation()
         } :
         (wheelEvent) => {
             setTimeout(100)
@@ -39,6 +40,7 @@ function customFinishListener(value) {
                 slider.removeEventListener('wheel', finishListener)
                 slider.addEventListener('wheel', slideListener)
             }
+            wheelEvent.stopPropagation()
         }
     return finishListener
 }
