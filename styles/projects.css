@@ -17,7 +17,6 @@
     flex-direction: row;
     width: 100%;
     overflow-x: hidden;
-    overscroll-behavior-x: none;
 }
 
 #projectslider::-webkit-scrollbar {
