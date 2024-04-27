@@ -135,8 +135,8 @@
 }
 
 #contentpanel .projectdiv>img {
-    width: var(--pimgw);
-    height: calc(var(--pimgw)*9/16);
+    max-width: var(--pimgw);
+    max-height: calc(var(--pimgw)*9/16);
     border-radius: 1.5vw;
 }
 
@@ -150,25 +150,25 @@
 
 @keyframes shrinkimg {
     from {
-        width: var(--pimgw);
-        height: calc(var(--pimgw)*9/16);
+        max-width: var(--pimgw);
+        max-height: calc(var(--pimgw)*9/16);
     }
 
     to {
-        width: calc(var(--pimgw)*0.7);
-        height: calc(var(--pimgw)*0.7*9/16);
+        max-width: calc(var(--pimgw)*0.7);
+        max-height: calc(var(--pimgw)*0.7*9/16);
     }
 }
 
 @keyframes enlargeimg {
     to {
-        width: var(--pimgw);
-        height: calc(var(--pimgw)*9/16);
+        max-width: var(--pimgw);
+        max-height: calc(var(--pimgw)*9/16);
     }
 
     from {
-        width: calc(var(--pimgw)*0.7);
-        height: calc(var(--pimgw)*0.7*9/16);
+        max-width: calc(var(--pimgw)*0.7);
+        max-height: calc(var(--pimgw)*0.7*9/16);
     }
 }
 
