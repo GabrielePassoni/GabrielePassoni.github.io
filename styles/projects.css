@@ -1,4 +1,3 @@
-
 .projectscontainer {
     padding: 1vw;
     display: flex;
@@ -18,6 +17,7 @@
     flex-direction: row;
     width: 100%;
     overflow-x: hidden;
+    overscroll-behavior-x: none;
 }
 
 #projectslider::-webkit-scrollbar {
@@ -26,6 +26,7 @@
 
 .projectdiv {
     cursor: pointer;
+    box-sizing: border-box;
     user-select: none;
     padding: 1vw;
     max-height: fit-content;
@@ -35,7 +36,6 @@
     flex-direction: row;
     gap: 2vw;
     align-items: center;
-
     position: relative;
     min-width: 100%;
     max-width: 100%;
@@ -43,7 +43,6 @@
     max-height: 100%;
     transition: all 0.8s;
     left: 0%;
-
     transition: all 0.5s ease-in-out;
 }
 
@@ -137,7 +136,8 @@
 }
 
 #contentpanel .projectdiv>img {
-    max-width: var(--pimgw);
+    width: var(--pimgw);
+    height: calc(var(--pimgw)*9/16);
     border-radius: 1.5vw;
 }
 
@@ -151,21 +151,25 @@
 
 @keyframes shrinkimg {
     from {
-        max-width: var(--pimgw);
+        width: var(--pimgw);
+        height: calc(var(--pimgw)*9/16);
     }
 
     to {
-        max-width: calc(var(--pimgw)*0.7);
+        width: calc(var(--pimgw)*0.7);
+        height: calc(var(--pimgw)*0.7*9/16);
     }
 }
 
 @keyframes enlargeimg {
     to {
-        max-width: var(--pimgw);
+        width: var(--pimgw);
+        height: calc(var(--pimgw)*9/16);
     }
 
     from {
-        max-width: calc(var(--pimgw)*0.7);
+        width: calc(var(--pimgw)*0.7);
+        height: calc(var(--pimgw)*0.7*9/16);
     }
 }
 
