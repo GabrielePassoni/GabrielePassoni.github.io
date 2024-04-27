@@ -12,6 +12,18 @@
     font-size: var(--pheadersize);
 }
 
+#projectslider {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#projectslider::-webkit-scrollbar {
+    display: none;
+}
+
 .projectdiv {
     cursor: pointer;
     user-select: none;
