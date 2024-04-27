@@ -64,6 +64,7 @@ let slideListener = (wheelEvent) => {
             slider.addEventListener('wheel', customFinishListener(-5))
         }
     }
+    wheelEvent.stopPropagation()
 }
 
 slider.addEventListener('wheel', slideListener)
