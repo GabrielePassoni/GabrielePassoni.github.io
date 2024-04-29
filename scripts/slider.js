@@ -66,5 +66,53 @@ let slideListener = (wheelEvent) => {
     }
 }
 
-slider.addEventListener('wheel', slideListener)
+var xDown = null;
+var yDown = null;
 
+function handleTouchStart(evt) {
+    console.log('first touch detected')
+    const firstTouch = evt.touches[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+
+function handleTouchMove(evt) {
+
+    console.log('move detected');
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 70) {
+            if (projectIndex < numOfProjects - 1) {
+                projectIndex++
+                changeIndexCircle(projectIndex - 1)
+                projects.forEach(e => e.setAttribute('style', 'left: calc(' + String(-100 * projectIndex) + '% - ' + String(2 * projectIndex) + 'vw)'))
+                slider.removeEventListener('wheel', slideListener)
+                slider.addEventListener('wheel', customFinishListener(5))
+            }
+        } else if (xDiff < -70) {
+            if (projectIndex > 0) {
+                projectIndex--
+                changeIndexCircle(projectIndex + 1)
+                projects.forEach(e => e.setAttribute('style', 'left: calc(' + String(-100 * projectIndex) + '% - ' + String(2 * projectIndex) + 'vw)'))
+                slider.removeEventListener('wheel', slideListener)
+                slider.addEventListener('wheel', customFinishListener(-5))
+            }
+        }
+    }
+
+    xDown = null;
+    yDown = null;
+};
+
+slider.addEventListener('wheel', slideListener)
+slider.addEventListener('touchstart', handleTouchStart);
+slider.addEventListener('touchmove', handleTouchMove);
