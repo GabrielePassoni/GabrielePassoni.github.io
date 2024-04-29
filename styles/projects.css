@@ -15,6 +15,7 @@
     position: static;
     display: flex;
     flex-direction: row;
+    gap: 2vw;
     width: 100%;
     overflow-x: hidden;
 }
@@ -27,8 +28,8 @@
     cursor: pointer;
     box-sizing: border-box;
     user-select: none;
+    color: var(--mainblue);
     padding: 1vw;
-    max-height: fit-content;
     border: var(--mainblue) solid;
     border-radius: 0;
     display: flex;
@@ -54,7 +55,7 @@
     @keyframes selectedp {
         from {
             background-color: transparent;
-            color: black;
+            color: var(--mainblue);
         }
 
         to {
@@ -66,7 +67,7 @@
     @keyframes unselectedp {
         to {
             background-color: transparent;
-            color: black;
+            color: var(--mainblue);
         }
 
         from {
@@ -77,12 +78,13 @@
 
     .projectscontainer .projectdiv.selectedp {
         animation: selectedp 0.5s forwards;
-        border: solid var(--mainblue) 0.8vw;
-        border-radius: 0 3vw;
+        animation-delay: 0.2s;
+        border: solid var(--mainblue) calc(var(--pimgw)*0.03);
+        border-radius: 0 calc(var(--pimgw)*0.1);
     }
 
     .projectscontainer .projectdiv.unselectedp {
-        animation: unselectedp 0.5s forwards;
+        animation: unselectedp 0.4s forwards;
     }
 }
 
@@ -90,7 +92,7 @@
     @keyframes selectedp {
         from {
             background-color: transparent;
-            color: black;
+            color: var(--mainblue);
             border: solid var(--mainblue);
         }
 
@@ -104,7 +106,7 @@
     @keyframes unselectedp {
         to {
             background-color: transparent;
-            color: black;
+            color: var(--mainblue);
         }
 
         from {
@@ -116,22 +118,51 @@
 
     .projectscontainer .projectdiv.selectedp {
         animation: selectedp 0.5s forwards;
-        border-radius: 0 3vw;
+        animation-delay: 0.2s;
+        border-radius: 0 calc(var(--pimgw)*0.1);
     }
 
     .projectscontainer .projectdiv.unselectedp {
-        animation: unselectedp 0.5s forwards;
+        animation: unselectedp 0.4s forwards;
+    }
+}
+
+@keyframes enlargetitle {
+    to {
+        font-size: calc(var(--ptitlesize)*1.5);
+    }
+
+    from {
+        font-size: var(--ptitlesize);
+    }
+}
+
+@keyframes shrinktitle {
+    from {
+        font-size: calc(var(--ptitlesize)*1.5);
+    }
+
+    to {
+        font-size: var(--ptitlesize);
     }
 }
 
 .projectdiv>div:nth-child(2) {
-    font-size: var(--ptitlesize);
+    font-size: calc(var(--ptitlesize)*1.5);
     font-weight: 700;
     text-align: center;
     overflow: hidden;
     text-wrap: wrap;
     min-width: 23vw;
-    width: 23vw;
+    flex-grow: 1;
+}
+
+.projectdiv.selectedp>div:nth-child(2) {
+    animation: shrinktitle 0.2s forwards;
+}
+
+.projectdiv.unselectedp>div:nth-child(2) {
+    animation: enlargetitle 0.8s forwards;
 }
 
 #contentpanel .projectdiv>img {
@@ -155,6 +186,8 @@
     }
 
     to {
+        padding-top: calc(var(--pimgw)*0.15*9/16);
+        padding-bottom: calc(var(--pimgw)*0.15*9/16);
         max-width: calc(var(--pimgw)*0.7);
         max-height: calc(var(--pimgw)*0.7*9/16);
     }
@@ -167,6 +200,8 @@
     }
 
     from {
+        padding-top: calc(var(--pimgw)*0.15*9/16);
+        padding-bottom: calc(var(--pimgw)*0.15*9/16);
         max-width: calc(var(--pimgw)*0.7);
         max-height: calc(var(--pimgw)*0.7*9/16);
     }
@@ -253,6 +288,7 @@
 }
 
 #index {
+    position: relative;
     display: flex;
     padding-top: 10px;
     flex-direction: row;
@@ -262,17 +298,17 @@
 }
 
 .indexcircle {
-    height: 15px;
-    width: 15px;
+    height: var(--indexradius);
+    width: var(--indexradius);
     background-color: white;
-    border: black solid 2px;
+    border: var(--mainblue) solid calc(var(--indexradius)*0.01);
     border-radius: 50%;
-    transition: all 0.8s;
+    transition: all 0.5s;
 }
 
 .indexcircle.selectedcircle {
-    background-color: green;
-    border: green solid 2px;
+    background-color: var(--maingreen);
+    border: var(--maingreen) solid calc(var(--indexradius)*0.01);
 }
 
 .descanchor {

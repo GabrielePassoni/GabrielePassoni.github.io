@@ -21,6 +21,7 @@
         --ptextsize: 3vw;
         --pheadersize: 4vw;
         --pimgw: 50vw;
+        --indexradius: 3vw;
     }
 }
 
@@ -41,6 +42,7 @@
         --ptextsize: 1.5vw;
         --pheadersize: 1.7vw;
         --pimgw: 30vw;
+        --indexradius: 1.5vw;
     }
 }
 

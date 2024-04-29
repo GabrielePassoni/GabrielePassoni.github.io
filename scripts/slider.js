@@ -51,7 +51,7 @@ let slideListener = (wheelEvent) => {
         if (projectIndex < numOfProjects - 1) {
             projectIndex++
             changeIndexCircle(projectIndex - 1)
-            projects.forEach(e => e.setAttribute('style', 'left: ' + String(-100 * projectIndex) + '%'))
+            projects.forEach(e => e.setAttribute('style', 'left: calc(' + String(-100 * projectIndex) + '% - ' + String(2 * projectIndex) + 'vw)'))
             slider.removeEventListener('wheel', slideListener)
             slider.addEventListener('wheel', customFinishListener(5))
         }
@@ -59,7 +59,7 @@ let slideListener = (wheelEvent) => {
         if (projectIndex > 0) {
             projectIndex--
             changeIndexCircle(projectIndex + 1)
-            projects.forEach(e => e.setAttribute('style', 'left: ' + String(-100 * projectIndex) + '%'))
+            projects.forEach(e => e.setAttribute('style', 'left: calc(' + String(-100 * projectIndex) + '% - ' + String(2 * projectIndex) + 'vw)'))
             slider.removeEventListener('wheel', slideListener)
             slider.addEventListener('wheel', customFinishListener(-5))
         }
