@@ -1,6 +1,6 @@
-let slider = document.querySelector('#projectslider')
+slider = document.querySelector('#projectslider')
 
-let projects = document.querySelectorAll('.projectdiv')
+projects = document.querySelectorAll('.projectdiv')
 
 for (let i = 0; i < projects.length; i++) {
     let circle = document.createElement('div')
